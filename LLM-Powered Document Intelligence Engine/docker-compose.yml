@@ -1,0 +1,10 @@
+services:
+  api:
+    build: .
+    container_name: llm-doc-engine
+    ports:
+      - "8000:8000"
+    environment:
+      DATABASE_URL: sqlite:////app/documents.db
+    volumes:
+      - .:/app
